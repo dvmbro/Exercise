@@ -1,0 +1,33 @@
+@Exercise_HostAddress = http://localhost:5167
+
+GET {{Exercise_HostAddress}}/products
+Accept: application/json
+
+###
+
+GET {{Exercise_HostAddress}}/products/6d9c17d4-c695-4a1c-9da2-7313df8e892d
+Accept: application/json
+
+###
+
+POST {{Exercise_HostAddress}}/products/
+Content-Type: application/json
+
+{
+    "name": "Product name",
+    "price": 424.52
+}
+
+###
+
+PATCH {{Exercise_HostAddress}}/products/6d9c17d4-c695-4a1c-9da2-7313df8e892d
+Content-Type: application/json
+
+{
+    "name": "New product name",
+    "price": 399.99
+}
+
+###
+
+DELETE {{Exercise_HostAddress}}/products/6d9c17d4-c695-4a1c-9da2-7313df8e892d
