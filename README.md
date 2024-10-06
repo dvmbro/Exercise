@@ -27,7 +27,7 @@ order by sum(sale.Quantity) desc
 select category.Name as CategoryName, cast(STRFTIME('%u', sale.SaleDate) as integer) as SaleDayOfWeek , ROUND(AVG(sale.Quantity)) as AverageQuantitySold from Product product
 join Category category on  category.Id = product.CategoryId
 left join Sales sale on sale.ProductId = product.Id 
-where SaleDayOfWeek != 7 AND cast(STRFTIME('%Y', sale.SaleDate) as integer) != 2023
+where SaleDayOfWeek != 7 AND cast(STRFTIME('%Y', sale.SaleDate) as integer) = 2023
 group by SaleDayOfWeek
 order by category.Name, SaleDayOfWeek, sum(sale.Quantity) desc
 ```
